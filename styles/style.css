@@ -59,6 +59,7 @@ ol {
   gap: 30px;
   margin-inline-start: 30px;
   margin-inline-end: 30px;
+  padding-block-start: 8px;
 }
 
 .result {
@@ -106,18 +107,19 @@ ol {
   width: fit-content;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline 1px #fff;
   text-underline-offset: 5px;
 } /*При наведении курсора на элемент "search-formlabel", текст будет подчеркнут тонкой белой линией толщиной 1 пиксель с отступом 5 пикселей от текста.*/
 
-.search-form__label-text:has(:focus-visible) {
-  text-decoration: underline 1px #fff;
+.search-form__label:has(:focus-visible) {
+  text-decoration: underline 1px currentColor;
   outline-offset: 1px;
+  outline: 1px solid currentColor;
 } /* Если элемент "search-formlabel" содержит дочерний элемент, который в фокусе и видим (селектор :focus-visible), тогда добавляется белая рамка толщиной 1 пиксель с отступом 1 пиксель от элемента*/
 
 .search-form__textfield {
-  border-top: 1px solid #fff;
+  border-top: 1px solid currentColor;
   border-right: none;
   border-bottom: 1px solid #fff;
   border-left: none;
@@ -141,15 +143,15 @@ ol {
 /*стили рамки у поиска*/
 /* stylelint-disable-next-line rule-empty-line-before */
 .search-form__textfield:active {
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
 } /*при нажатии появляется белая рамка*/
 
 .search-form__textfield:focus {
-  outline: none;
+  border: 1px solid currentColor;
 } /*когда в фокусе, то убирается стандартная рамка браузера*/
 
 .search-form__textfield:focus-visible {
-  outline: none;
+  outline: 1px solid currentColor;
 } /*если элемент в фокусе видим, то снова убирается стандартная рамка*/
 
 .search-form__checkbox-list {
@@ -182,7 +184,7 @@ ol {
   transition: background-color 0.3s;
   background-color: transparent;
   inline-size: 100%;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   color: #fff;
   padding-inline-start: 6px;
   padding-inline-end: 6px;
@@ -261,7 +263,7 @@ ol {
 }
 
 .content__card-link:focus {
-  outline: none;
+  outline: 1px solid currentColor;
 }
 
 .content__card-link:focus-visible {
@@ -282,20 +284,24 @@ ol {
 }
 
 .content__video-card-title {
-  padding: 2px 2px 5px;
+  padding: 4px 2px 5px;
   color: #fff;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 1;
   text-transform: uppercase;
-  hyphens: auto; /*перенос текста согласно правилам браузеров*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
   color: #fff;
   font-weight: 400;
   line-height: 16.2px;
+  max-inline-size: 200px;
+  word-wrap: break-word;
 }
 
 .content__video-card-thumbnail {
