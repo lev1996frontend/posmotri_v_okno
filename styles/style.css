@@ -249,6 +249,9 @@ ol {
   overflow: auto; /*добавляю скролл вертикальный*/
 }
 
+.content__list::-webkit-scrollbar {
+  display: none;
+}
 
 .content__list-item:not(:last-child) {
   margin-block-end: 34px; /*добавляет отступ элементам, чтобы визуально разделить элементы списка*/
@@ -279,7 +282,7 @@ ol {
 }
 
 .content__card-link_current {
-  background-color: #54505099;
+  background-color: #545050;
 }
 
 .content__video-card {
@@ -310,11 +313,11 @@ ol {
   line-height: 16.2px;
   max-inline-size: 200px;
   word-wrap: break-word;
-  hyphens: auto;
 }
 
 .content__video-card-thumbnail {
   inline-size: 48.74%;
+  
   object-fit: cover;
   object-position: center; /*сохраняю пропорции изображения и задаю их по центру*/
 }
