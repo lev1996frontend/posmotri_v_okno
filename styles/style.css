@@ -226,7 +226,7 @@ ol {
 }
 
 .content__details {
-  inline-size: 100%;
+  inline-size: 35%;
 }
 
 .title {
@@ -252,7 +252,6 @@ ol {
 .content__list::-webkit-scrollbar {
   display: none;
 }
-
 
 .content__list-item:not(:last-child) {
   margin-block-end: 34px; /*добавляет отступ элементам, чтобы визуально разделить элементы списка*/
@@ -292,7 +291,7 @@ ol {
 }
 
 .content__video-card-description-container {
-  inline-size: 100%;
+  inline-size: 50.25%;
 }
 
 .content__video-card-title {
@@ -317,8 +316,8 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  inline-size: 194px;
-  block-size: 103px;
+  inline-size: 48.74%;
+  
   object-fit: cover;
   object-position: center; /*сохраняю пропорции изображения и задаю их по центру*/
 }
