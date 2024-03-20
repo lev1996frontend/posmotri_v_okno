@@ -59,8 +59,7 @@ ol {
   inline-size: 1140px;
   gap: 30px;
   margin-inline-start: 30px;
-  margin-inline-end: 9px;
-  margin-block-start: 66px;
+  margin-inline-end: 30px;
 }
 
 .result {
@@ -165,19 +164,22 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  display: block;
-  outline: 1px solid #fff;
+  border: 1px solid #fff;
   inline-size: 19px;
   block-size: 19px;
 }
 
+.search-form__pseudo-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
-  display: block;
   background-color: rgba(255, 255, 255, 1);
-  inline-size: 15px;
-  block-size: 15px;
-  margin: 2px 0 0 2px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
 }
 
 .button {
@@ -246,6 +248,11 @@ ol {
   block-size: 298px;
   overflow: auto; /*добавляю скролл вертикальный*/
 }
+
+.content__list::-webkit-scrollbar {
+  display: none;
+}
+
 
 .content__list-item:not(:last-child) {
   margin-block-end: 34px; /*добавляет отступ элементам, чтобы визуально разделить элементы списка*/
